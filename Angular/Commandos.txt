@@ -1,0 +1,4 @@
+docker run -it -v "E:\\Estudos\\Gago.io\\DockerDefinitivo\\DockerCommands\\Angular"://app --entrypoint sh node:17-
+alpine
+
+docker run -it-rm -v "E:\\Estudos\\Gago.io\\DockerDefinitivo\\DockerCommands\\Angular\\dist\\app"://usr//share//nginx//html -p 80:80 nginx
