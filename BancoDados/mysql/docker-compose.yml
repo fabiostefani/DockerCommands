@@ -2,8 +2,8 @@ version: '3.9'
 
 services:
   mysql_service_blablabla:
-    ##image: mysql:8
-    image: mariadb:10
+    #image: mysql:8
+    image: mariadb:latest
     environment:
       - MYSQL_ROOT_PASSWORD=123456789
       - MYSQL_DATABASE=dockerdefinitivo

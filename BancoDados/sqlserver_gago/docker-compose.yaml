@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  sqlserver_service_blablabla:
+    image: luizcarlosfaria/mssql-server-linux:2017-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Dock&rD&finitivo    
+      - MSSQL_PID=Developer            
+      - MSSQL_DATABASE=dockerdefinitivo
+      - MSSQL_USER=dockerdefinitivo
+      - MSSQL_PASSWORD=Dock&rD&finitivo      
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver_data:/var/opt/mssql/data
+      - ./scripts/:/docker-entrypoint-initdb.d
+    networks:
+      - db_sql
+  
+volumes:
+  sqlserver_data:
+    driver: local
+
+networks:
+  db_sql:
+    driver: bridge
